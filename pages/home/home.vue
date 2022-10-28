@@ -17,15 +17,11 @@
 		},
 		methods:{
 			async getSwiperList() {
-				let {data: res} = await uni.$http.get('/public/v1/home/swiperdata')
+				let {data: res} = await uni.api.getSwiperdata()
 				console.log('测试获取到的轮播图数据',res)
 				if (res.meta && res.meta.status == 200) {
 					this.swiperList = res.message
-				} else {
-					return uni.showToast({
-						title:'数据请求失败！',
-					})
-				}
+				} else return uni.$showMsg()
 			}
 		},
 		onLoad() {
