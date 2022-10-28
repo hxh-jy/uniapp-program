@@ -9,7 +9,7 @@ uni.api = api
 
 // 封装请求失败时的弹窗
 uni.$showMsg = function(title="数据加载失败",duration=1500) {
-	uni.$showToast({
+	uni.showToast({
 		title,
 		duration,
 		icon: 'none'

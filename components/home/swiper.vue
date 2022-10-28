@@ -12,7 +12,7 @@
 
 <script>
 	export default {
-		name:"swiper",
+		name:"Swiper",
 		data() {
 			return {
 				
@@ -25,7 +25,6 @@
 			}
 		},
 		mounted() {
-			console.log('测试传过来的数据',this.list)
 		}
 	}
 </script>
