@@ -16,6 +16,8 @@
 				type: Array,
 				default() { return []}
 			}
+		},
+		mounted() {
 		}
 	}
 </script>

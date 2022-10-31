@@ -41,19 +41,19 @@
 				})
 			},
 			async getSwiperList() {
-				let {data: res} = await uni.api.getSwiperdata()
+				let res = await uni.api.getSwiperdata()
 				if (res.meta && res.meta.status == 200) {
 					this.swiperList = res.message
 				} else return uni.$showMsg('轮播图数据加载失败')
 			},
 			async getCatitems() {
-				let {data: res} = await uni.api.getCatitems() 
+				let res= await uni.api.getCatitems() 
 				if (res.meta.status == 200) {
 					this.catList = res.message
 				} else return uni.$showMsg('分类栏目数据加载失败')
 			},
 			async getFloorList() {
-				let {data: res} = await uni.api.getFloorList()
+				let res = await uni.api.getFloorList()
 				// console.log('测试楼层数据',res.message)
 				if (res.meta.status == 200) {
 					this.floorList = res.message

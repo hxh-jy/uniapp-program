@@ -15,4 +15,8 @@ api.getCatitems = function(config) {
 api.getFloorList = function(config) {
 	return http({url: '/public/v1/home/floordata',data: config})
 }
+// 获取分类数据
+api.getCategories = function(config) {
+	return http({url: '/public/v1/categories',data: config})
+}
 export default api

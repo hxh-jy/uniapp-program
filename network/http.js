@@ -6,7 +6,7 @@ export const http =  (options) => {
 			method: options.method || 'GET',
 			data: options.data || {},
 			success: res => {
-				resolve(res)
+				resolve(res.data)
 			},
 			fail: err => {
 				reject(err)
