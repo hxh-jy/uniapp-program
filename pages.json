@@ -35,7 +35,15 @@
 				"style": {
 				}
 			}
-		]
+		    ,{
+                    "path" : "hongbao/hongbao",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                }
+            ]
 	}],
 	
 	"globalStyle": {
