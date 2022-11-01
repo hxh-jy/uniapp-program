@@ -1,6 +1,6 @@
 <template>
 	<view>
-		测试数据**
+		商品列表页
 	</view>
 </template>
 

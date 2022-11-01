@@ -19,4 +19,10 @@ api.getFloorList = function(config) {
 api.getCategories = function(config) {
 	return http({url: '/public/v1/categories',data: config})
 }
+
+// 获取搜索结果接口
+api.getQsearch = function(config) {
+	return http({url: '/public/v1/goods/qsearch',data: config})
+}
+
 export default api

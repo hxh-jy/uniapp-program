@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view>测试</view>
+		<view>商品详情页</view>
 	</view>
 </template>
 

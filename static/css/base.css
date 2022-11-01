@@ -1,0 +1,103 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: no-repeat 0 0;
+  background-size: 100% auto;
+  font-size: inherit;
+  /* font-weight: normal; */
+  font-style: normal;
+  text-decoration: none;
+  line-height: inherit;
+  outline: none;
+}
+.downloadApp:hover {
+  cursor: pointer;
+}
+body {
+  font-family: 'Source Sans Pro',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  color: #333;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+}
+li {
+  list-style: none;
+}
+a,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+pre {
+  white-space: pre-wrap;
+  font: inherit;
+  text-align: justify;
+}
+input {
+  outline: none;
+}
+
+/* 清除浮动 */
+
+.clearfix:after,.clearfix:before{
+  content: "";
+  display: table;
+}
+.clearfix:after{
+  clear: both;
+}
+.clearfix{
+  *zoom: 1;
+}
+
+body {
+  /* 开发专题页时不需要设置该背景 所以此处省略 */
+  /* background-color: rgb(50, 40, 104); */
+}
+.text-overflow-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text-overflow-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* 自定义标题字体大小，及简介字体大小 */
+:root { 
+  --desc-fontFamily: auto;
+  --desc-fontSize: 13px;
+  --desc-color: #999;
+
+  --tag-fontFamily:auto;
+  --tag-color: #666;
+  --tag-fontSie: 12px;
+  --tag-bgc: #dddddd94;
+
+  --down-fontFamily:fangsong;
+  --letter-2space: 2px;
+}

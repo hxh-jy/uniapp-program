@@ -1,6 +1,7 @@
 <template>
-	<view>
-		<Swiper v-if="swiperList && swiperList.length > 0" :list="swiperList"></Swiper>
+	<view class="home-container">
+		<MySearch @tap="gotoSearch" class="home-search"></MySearch>
+		<Swiper class="home-swiper" v-if="swiperList && swiperList.length > 0" :list="swiperList"></Swiper>
 		<view class="home-body">
 			<CatNav v-if="catList && catList.length > 0" :list="catList"></CatNav>
 			<FloorList v-if="floorList && floorList.length > 0" :list="formatList(floorList)"></FloorList>
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+	import MySearch from '../../components/public/MySearch.vue'
 	import Swiper from '../../components/home/Swiper.vue'
 	import CatNav from '../../components/home/CatNav.vue'
 	import FloorList from '../../components/home/FloorList.vue'
@@ -23,7 +25,8 @@
 		components: {
 			Swiper,
 			CatNav,
-			FloorList
+			FloorList,
+			MySearch 
 		},
 		methods:{
 			formatList(list) {
@@ -58,6 +61,11 @@
 				if (res.meta.status == 200) {
 					this.floorList = res.message
 				} else return uni.$showMsg('楼层数据加载失败')
+			},
+			gotoSearch() {
+				uni.navigateTo({
+					url: '/subpkg/search/search'
+				})
 			}
 		},
 		onLoad() {
@@ -69,7 +77,19 @@
 </script>
 
 <style lang="scss">
-.home-body {
-	padding: 16rpx;
-}
+	.home-container {
+		position: relative;
+		.home-search {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+		}
+		.home-swiper {
+			margin-top: 50px;
+		}
+		.home-body {
+			padding: 16rpx;
+		}
+	}
 </style>
