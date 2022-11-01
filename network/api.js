@@ -25,4 +25,8 @@ api.getQsearch = function(config) {
 	return http({url: '/public/v1/goods/qsearch',data: config})
 }
 
+// 获取商品列表的数据
+api.getGoodslist = function(config) {
+	return http({url: '/public/v1/goods/search',data: config})
+}
 export default api
