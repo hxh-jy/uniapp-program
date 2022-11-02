@@ -14,6 +14,8 @@
 	import Swiper from '../../components/home/Swiper.vue'
 	import CatNav from '../../components/home/CatNav.vue'
 	import FloorList from '../../components/home/FloorList.vue'
+	
+	import badgeMix from '@/mixins/tabbar-badge.js'
 	export default {
 		data() {
 			return {
@@ -22,6 +24,7 @@
 				floorList: []
 			};
 		},
+		mixins: [badgeMix],
 		components: {
 			Swiper,
 			CatNav,

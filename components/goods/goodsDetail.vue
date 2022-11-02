@@ -10,7 +10,7 @@
 					<text>收藏</text>
 				</view>
 			</view>
-			<view class="yf">快递：免运费</view>
+			<view class="yf">快递：免运费---{{cart.length}}</view>
 		</view>
 		<!-- 商品详情信息 -->
 		<rich-text v-if="info.goods_introduce" :nodes="info.goods_introduce"></rich-text>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
 	export default {
 		props: {
 			info: {
@@ -27,10 +28,14 @@
 				}
 			}
 		},
+		
+		computed: {
+			...mapState('m_cart',['cart'])
+		},
 		methods: {
 			formateIntro(intro) {
 				return intro.replace(/<img/g,'<img style="display: block;"').repalce(/webp/g,'jpg')
-			}
+			},
 		}
 	}
 </script>

@@ -17,6 +17,7 @@
 	import MySearch from '../../components/public/MySearch.vue'
 	import LeftCate from '@/components/cate/LeftCate.vue'
 	import RightCate from '@/components/cate/RightCate.vue'
+	import badgeMix from '@/mixins/tabbar-badge.js'
 	export default {
 		components: {
 			MySearch,
@@ -30,6 +31,7 @@
 				index: 0
 			};
 		},
+		mixins: [badgeMix],
 		methods: {
 			gotoSearch() {
 				uni.navigateTo({
