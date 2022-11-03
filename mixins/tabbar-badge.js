@@ -3,6 +3,9 @@
 		computed: {
 			...mapGetters('m_cart',['total'])
 		},
+		watch: {
+			'total': ['setBadge']
+		},
 		methods: {
 			setBadge() {
 				uni.setTabBarBadge({
