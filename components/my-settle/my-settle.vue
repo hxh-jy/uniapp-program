@@ -9,25 +9,36 @@
 			合计:<text class="amount">￥{{settlePrice}}</text>
 		</view>
 		<!-- 结算按钮 -->
-		<view class="btn-settle">结算({{settleCount}})</view>
+		<view class="btn-settle" @click="handleSettle">结算({{settleCount}})</view>
 	</view>
 </template>
 
 <script>
-	import {mapGetters,mapMutations} from 'vuex'
+	import {mapState,mapGetters,mapMutations} from 'vuex'
 	export default {
-		name:"my_settle",
+		name:"my-settle",
 		data() {
 			return {
 			};
 		},
 		computed: {
-			...mapGetters('m_cart',['settleCount','settlePrice','ischooseAll'])
+			...mapGetters('m_cart',['settleCount','settlePrice','ischooseAll']),
+			...mapGetters('m_user',['addstr']),
+			...mapState('m_user',['token'])
 		},
 		methods: {
 			...mapMutations('m_cart',['updateChooseAll']),
 			handleRadioChange(e) {
 				this.updateChooseAll(!this.ischooseAll)
+			},
+			handleSettle() {
+				console.log('请选择要结算的商品')
+				// 点击结算之前要先判断是否选择了商品
+				if (this.settleCount == 0) return uni.$showMsg('请选择要结算的商品')
+				// 判断是否选择了收货地址
+				if (!this.addstr) return uni.$showMsg('请选择收货地址')
+				// 判断用户是否登录了
+				if (!this.token) return uni.$showMsg('请先登录！')
 			}
 		}
 	}

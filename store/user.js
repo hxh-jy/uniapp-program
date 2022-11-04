@@ -1,15 +1,24 @@
 export default {
 	namespaced: true,
 	state: {
-		address: {}
+		address: JSON.parse(uni.getStorageSync('address') || '{}'),
+		token: '',
+		userinfo: JSON.parse(uni.getStorageSync('userinfo') || '{}')
 	},
-	mutatios: {
+	mutations: {
 		updateAddress(state,address) {
 			state.address = address
 			this.commit('m_user/saveAddressToStorage')
 		},
-		saveAddressToStorage(state,address) {
+		saveAddressToStorage(state) {
 			uni.setStorageSync('address',JSON.stringify(state.address))
+		},
+		updateUserInfo(state,userinfo) {
+			state.userinfo = userinfo
+			this.commit('m_user/saveUserinfoToStorage')
+		},
+		saveUserinfoToStorage(state) {
+			uni.setStorageSync('userinfo',JSON.stringify(state.userinfo))
 		}
 	},
 	getters: {

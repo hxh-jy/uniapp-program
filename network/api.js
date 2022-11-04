@@ -34,4 +34,10 @@ api.getGoodslist = function(config) {
 api.getGoodsDetail = function(config) {
 	return http({url: '/public/v1/goods/detail',data: config})
 }
+
+// 获取token
+api.getWxlogin = function(config) {
+	return http({url: '/public/v1/users/wxlogin',data: config,method: 'POST'})
+}
+
 export default api
